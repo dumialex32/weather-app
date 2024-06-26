@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:sass": "sass assets/sass/main.scss assets/css/style.css -w"
   },
   "author": "Dumitras Alexandru",
   "license": "ISC",
-  "description": ""
+  "description": "A simple PHP weather app that retrieves and displays current weather information using API integration. Designed to showcase PHP development skills.",
+  "devDependencies": {
+    "sass": "^1.77.6"
+  }
 }

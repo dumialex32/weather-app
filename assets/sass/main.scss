@@ -1,0 +1,79 @@
+// Variables
+$primary-color: #fff;
+$green-light: #12b886;
+$green-dark: #099268;
+
+// Placeholders
+%btn-placeholder {
+  color: $primary-color;
+  border-color: $green-light;
+  transition: all 0.2s;
+}
+
+// Global Styles
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 0.2rem $green-light !important;
+  }
+
+  &::selection {
+    color: $green-light;
+  }
+}
+
+// Body Styles
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: $primary-color;
+}
+
+// Hero Section Styles
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("../images/hero-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  padding: 9rem 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(56, 217, 169, 0.123);
+    z-index: -1;
+  }
+
+  //  Btn styles
+  .btn {
+    @extend %btn-placeholder;
+
+    &.btn-primary {
+      background-color: $green-light;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      &:active {
+        background-color: $green-dark;
+        border: none;
+        transform: translateY(1px);
+        box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}

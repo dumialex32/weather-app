@@ -1,0 +1,61 @@
+.hero .btn {
+  color: #fff;
+  border-color: #12b886;
+  transition: all 0.2s;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem #12b886 !important;
+}
+*::selection {
+  color: #12b886;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url("../images/hero-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  padding: 9rem 0;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(56, 217, 169, 0.123);
+  z-index: -1;
+}
+.hero .btn.btn-primary {
+  background-color: #12b886;
+}
+.hero .btn.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.hero .btn.btn-primary:active {
+  background-color: #099268;
+  border: none;
+  transform: translateY(1px);
+  box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=style.css.map */
