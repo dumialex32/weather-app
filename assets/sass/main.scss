@@ -1,12 +1,13 @@
 // Variables
-$primary-color: #fff;
-$green-light: #12b886;
-$green-dark: #099268;
+$color-white: #fff;
+$color-dark: #333;
+$color-green--light: #12b886;
+$color-green--dark: #099268;
 
 // Placeholders
 %btn-placeholder {
-  color: $primary-color;
-  border-color: $green-light;
+  color: $color-white;
+  border-color: $color-green--light;
   transition: all 0.2s;
 }
 
@@ -18,11 +19,11 @@ $green-dark: #099268;
 
   &:focus {
     outline: none !important;
-    box-shadow: 0 0 0 0.2rem $green-light !important;
+    box-shadow: 0 0 0 0.2rem $color-green--light !important;
   }
 
   &::selection {
-    color: $green-light;
+    color: $color-green--light;
   }
 }
 
@@ -31,7 +32,7 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1;
   font-weight: 400;
-  color: $primary-color;
+  color: $color-dark;
 }
 
 // Hero Section Styles
@@ -61,7 +62,7 @@ body {
     @extend %btn-placeholder;
 
     &.btn-primary {
-      background-color: $green-light;
+      background-color: $color-green--light;
 
       &:hover {
         transform: translateY(-3px);
@@ -69,11 +70,22 @@ body {
       }
 
       &:active {
-        background-color: $green-dark;
+        background-color: $color-green--dark;
         border: none;
         transform: translateY(1px);
         box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.2);
       }
+    }
+  }
+}
+
+// Card styles
+.card {
+  line-height: 1.4;
+
+  .card-body {
+    & .loc {
+      font-weight: 700;
     }
   }
 }

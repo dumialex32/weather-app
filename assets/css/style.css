@@ -21,7 +21,7 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1;
   font-weight: 400;
-  color: #fff;
+  color: #333;
 }
 
 .hero {
@@ -56,6 +56,13 @@ body {
   border: none;
   transform: translateY(1px);
   box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card {
+  line-height: 1.4;
+}
+.card .card-body .loc {
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,38 +1,38 @@
-import { createCard } from "./utils.js";
+import { createCard, createLoader } from "./utils.js";
 
 $(document).ready(function () {
   $("#weatherForm").submit((e) => {
     e.preventDefault();
 
-    // Retrieve form input
     const city = $("#city").val();
+    const loaderEl = createLoader("#cards");
 
-    // Do a POST request
     $.ajax({
       url: "php/weather.php",
       type: "POST",
-      data: {
-        city,
-      },
+      data: { city },
       dataType: "json",
-
       success: (data) => {
-        if (data) {
+        if (data && data.features) {
           const geoData = data.features;
-          console.log(geoData);
           const cardsContainer = $("#cards");
           cardsContainer.empty();
 
-          geoData.forEach((data) => {
-            const card = createCard(data);
+          geoData.forEach((item) => {
+            const card = createCard(item);
             cardsContainer.append(card);
           });
+        } else {
+          console.error("Invalid data structure:", data);
         }
       },
       error: (xhr, status, err) => {
         console.error(`Error: ${err}`);
         console.error(`Status: ${status}`);
         console.error(`XHR: ${xhr.responseText}`);
+      },
+      complete: () => {
+        loaderEl.remove();
       },
     });
   });
