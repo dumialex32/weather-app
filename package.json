@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "A simple PHP weather app that retrieves and displays current weather information using API integration. Designed to showcase PHP development skills.",
   "devDependencies": {
+    "@prettier/plugin-php": "^0.22.2",
     "sass": "^1.77.6"
   }
 }
