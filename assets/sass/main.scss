@@ -1,3 +1,5 @@
+@import "./custom.scss";
+
 // Variables
 $color-white: #fff;
 $color-dark: #333;
@@ -87,5 +89,13 @@ body {
     & .loc {
       font-weight: 700;
     }
+  }
+}
+
+// Modal
+
+.modal {
+  .temp-list {
+    list-style: none;
   }
 }

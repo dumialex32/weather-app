@@ -4,6 +4,7 @@ import { showForecastModal } from "./modal.js";
 export function createCard(location) {
   const [lng, lat] = location.geometry.coordinates;
   const coords = { lng, lat };
+
   const cityName = location.text;
   const countryName = location.context[0]?.text;
 
@@ -21,7 +22,7 @@ export function createCard(location) {
     e.preventDefault();
 
     const forecast = await loadCityForecast(coords);
-    showForecastModal(forecast);
+    showForecastModal(forecast, cityName);
   });
 
   return $card;
