@@ -1,9 +1,9 @@
 <?php
 
-function getForecast($coords)
+function getForecast($postData)
 {
-    $lat = $coords["lat"];
-    $lng = $coords["lng"];
+    $lat = $postData["lat"];
+    $lng = $postData["lng"];
 
     $url =
         "https://api.open-meteo.com/v1/forecast?latitude=" .

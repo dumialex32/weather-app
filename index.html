@@ -18,6 +18,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- Bootstrap icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css"
+    />
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap Bundle with Popper.js -->
@@ -44,18 +49,20 @@
                 >
                 <input
                   type="text"
-                  id="city"
-                  name="city"
+                  id="location"
+                  name="location"
                   class="form-control"
                   required
                 />
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">
+                Submit location
+              </button>
             </form>
           </div>
         </div>
-        <!-- city cards -->
-        <div class="row" id="cards"></div>
+
+        <div class="row" id="locationCards"><!-- location card --></div>
       </div>
     </section>
 

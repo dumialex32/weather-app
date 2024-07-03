@@ -1,17 +1,16 @@
-export async function getForecast(coords) {
-  console.log(coords);
+export default async function getLocationForecast(coords) {
   try {
-    const data = await $.ajax({
+    const locationForecast = await $.ajax({
       url: "php/forecast.php",
       type: "POST",
       data: coords,
       dataType: "json",
     });
 
-    if (!data)
+    if (!locationForecast)
       throw new Error("Coult not provide the forecast for this location");
 
-    return data;
+    return locationForecast;
   } catch (error) {
     console.error(error);
     throw error;

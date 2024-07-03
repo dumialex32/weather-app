@@ -1,11 +1,12 @@
 <?php
 require_once __DIR__ . "../../../config.php";
 
-function getCoords($city)
+function getCoords($postData)
 {
     global $accessToken;
 
-    $url = "https://api.mapbox.com/geocoding/v5/mapbox.places/$city.json?access_token=$accessToken";
+    $location = $postData["location"];
+    $url = "https://api.mapbox.com/geocoding/v5/mapbox.places/$location.json?access_token=$accessToken";
 
     $ch = curl_init();
 

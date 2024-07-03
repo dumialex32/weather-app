@@ -5,10 +5,10 @@ require_once "utils/helpers.php";
 header("Content-Type: application/json");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $requiredKeys = ["city"];
+    $requiredKeys = ["location"];
     $postData = validatePostData($requiredKeys);
 
-    $coordsData = getCoords($postData["city"]);
+    $coordsData = getCoords($postData);
 
     respondWithJson($coordsData);
 } else {

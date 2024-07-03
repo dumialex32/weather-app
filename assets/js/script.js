@@ -1,25 +1,22 @@
-import { getCoords } from "./services/getCityCoords.js";
-import { createCard, createLoader } from "./utils/utils.js";
+import { loadInputLocations } from "./services/dataLoaders/loadInputLocations.js";
+import { createCard } from "./ui/card.js";
+import { createLoader } from "./ui/loader.js";
 
 $("#weatherForm").submit(async (e) => {
   e.preventDefault();
-  const cardsContainer = $("#cards");
-  const city = $("#weatherForm").find("#city").val();
+  const cardsContainer = $("#locationCards");
+
+  const location = $("#weatherForm").find("#location").val();
 
   cardsContainer.empty();
+
   const loader = createLoader(cardsContainer);
+  const locations = await loadInputLocations(location);
+  console.log(locations);
+  loader.remove();
 
-  try {
-    const data = await getCoords(city);
-    console.log(data);
-
-    data.forEach((item) => {
-      const cityCard = createCard(item);
-      cardsContainer.append(cityCard);
-    });
-  } catch (err) {
-    console.error(err);
-  } finally {
-    loader.remove();
-  }
+  locations.forEach((location) => {
+    const locationCard = createCard(location);
+    cardsContainer.append(locationCard);
+  });
 });
