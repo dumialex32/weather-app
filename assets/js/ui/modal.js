@@ -18,8 +18,6 @@ export function showForecastModal(forecast, cityName) {
 }
 
 function createModal(dailyForecast, cityName) {
-  const tempMap = {};
-
   let temperatureList = "<ul class='temp-list'>";
   for (let i = 0; i < dailyForecast.time.length; i++) {
     temperatureList += `<li class="d-flex gap-4 alert alert-${dailyForecast.temp[i] > 20 && dailyForecast.temp[i] <= 25 ? "warning" : dailyForecast.temp[i] > 25 ? "danger" : "success"}" role="alert"><span>${formatDate(dailyForecast.time[i])}</span><span>${dailyForecast.temp[i]}°C</span></li>`;
@@ -31,7 +29,7 @@ function createModal(dailyForecast, cityName) {
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Forecast for ${cityName}</h1>
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">${cityName} forecast for the next 7 days</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">${temperatureList}</div>

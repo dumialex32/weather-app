@@ -1,6 +1,14 @@
-export function createLoader(parentEl) {
-  const loader = $(`<div class="text-center">
-      <div class="spinner-border text-light" role="status">
+const spinnerColors = {
+  green: "success",
+  red: "danger",
+  white: "light",
+};
+
+export function createLoader(parentEl, color) {
+  const spinnerColorClass = spinnerColors[color] || "light";
+  const loader = $(`<div class="d-flex justify-content-center">
+    <div class="text-${spinnerColorClass}">
+      <div class="spinner-border text-${spinnerColorClass}" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>
     </div>`);
