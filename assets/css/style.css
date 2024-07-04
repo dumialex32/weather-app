@@ -356,13 +356,7 @@ body {
   font-weight: 700;
 }
 
-.modal .modal-body .temp-box:last-child {
-  justify-self: start;
-}
-.modal .modal-body .temp-box .temp-list {
-  padding-left: 0;
-}
-.modal .modal-body .temp-box .temp-list .temp-list-item {
+.modal .temp-list {
   list-style: none;
 }
 
