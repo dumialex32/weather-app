@@ -95,7 +95,17 @@ body {
 // Modal
 
 .modal {
-  .temp-list {
-    list-style: none;
+  .modal-body {
+    & .temp-box {
+      &:last-child {
+        justify-self: start;
+      }
+      & .temp-list {
+        padding-left: 0;
+        & .temp-list-item {
+          list-style: none;
+        }
+      }
+    }
   }
 }

@@ -9,3 +9,19 @@ export function formatDate(date) {
     minute: "2-digit",
   }).format(newDate);
 }
+
+export function convertDateToWeekday(dateStr) {
+  console.log(dateStr);
+  const date = new Date(dateStr);
+  return new Intl.DateTimeFormat("en-EN", {
+    weekday: "long",
+  }).format(date);
+}
+
+export function convertDateToHour(dateStr) {
+  const date = new Date(dateStr);
+  return new Intl.DateTimeFormat("en-EN", {
+    hour: "2-digit",
+    minute: "2-digit",
+  }).format(date);
+}

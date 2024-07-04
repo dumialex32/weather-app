@@ -10,6 +10,7 @@ export default async function getLocationForecast(coords) {
     if (!locationForecast)
       throw new Error("Coult not provide the forecast for this location");
 
+    console.log(locationForecast);
     return locationForecast;
   } catch (error) {
     console.error(error);

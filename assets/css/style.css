@@ -1,6 +1,6 @@
 .modal {
   --bs-modal-zindex: 1055;
-  --bs-modal-width: 60rem;
+  --bs-modal-width: 100rem;
   --bs-modal-padding: 1rem;
   --bs-modal-margin: 0.5rem;
   --bs-modal-color: ;
@@ -356,7 +356,13 @@ body {
   font-weight: 700;
 }
 
-.modal .temp-list {
+.modal .modal-body .temp-box:last-child {
+  justify-self: start;
+}
+.modal .modal-body .temp-box .temp-list {
+  padding-left: 0;
+}
+.modal .modal-body .temp-box .temp-list .temp-list-item {
   list-style: none;
 }
 
